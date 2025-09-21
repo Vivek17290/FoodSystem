@@ -1,0 +1,35 @@
+# Undo the last staged changes (unstage files, keep modifications in working directory)
+git reset HEAD <file_or_path>
+
+# Save current uncommitted changes (both staged and unstaged) into a temporary stash
+git stash
+
+# Reapply the most recent stashed changes and remove them from the stash list
+git stash pop
+
+# Apply changes from a patch file (without creating a commit)
+git apply teammate-patch.patch
+
+# Check if a patch can be applied cleanly (without conflicts)
+git apply --check teammate-patch.patch
+
+# Discard local changes in the working directory (revert to last committed state)
+git checkout -- .
+
+# Modify the last commit message (without creating a new commit)
+git commit --amend -m "msg"
+
+# Show commit history in short, one-line format
+git log --oneline
+
+# Add a new remote repository with a custom name
+git remote add new-remote <url>
+
+# Push current branch (main) to the newly added remote
+git push new-remote main
+
+# Delete a branch named 'patient' from the remote 'origin'
+git push origin --delete patient
+
+# Show details of the last commit (diff, metadata, etc.)
+git show

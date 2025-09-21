@@ -1,0 +1,75 @@
+# Run a container
+docker run -d -p 8080:80 nginx:latest        # Run nginx on host:8080 → container:80
+docker run -it ubuntu:latest /bin/bash       # Run interactive Ubuntu container
+
+# Container lifecycle
+docker start mycontainer                     # Start stopped container
+docker stop mycontainer                      # Stop running container
+docker restart mycontainer                   # Restart container
+docker pause mycontainer                     # Pause container
+docker unpause mycontainer                   # Unpause container
+
+# Remove containers
+docker rm mycontainer                        # Remove stopped container
+docker rm -f mycontainer                     # Force remove running container
+docker container prune                       # Remove all stopped containers
+
+
+
+
+
+# Pull and manage images
+docker pull nginx:latest                     # Download image from Docker Hub
+docker images                                # List all downloaded images
+docker rmi nginx:latest                      # Remove image
+docker image prune                           # Remove unused images
+
+# Build images
+docker build -t myapp:latest .               # Build image from Dockerfile in current dir
+
+
+
+
+# Container information
+docker ps                                    # List running containers
+docker ps -a                                 # List all containers (including stopped)
+docker logs mycontainer                      # View container logs
+docker logs -f mycontainer                   # Follow logs in real-time
+
+# Resource monitoring
+docker stats                                 # Live resource usage of containers
+docker top mycontainer                       # View processes inside container
+docker inspect mycontainer                   # Detailed container information
+
+
+
+
+
+docker port mycontainer                      # Show port mappings for container
+docker port mycontainer 80 
+
+
+
+
+docker pull nginx:latest
+docker run --name myweb -d -p 8080:80 nginx:latest
+
+
+
+# First list all containers using port 8080
+docker ps --filter "publish=8080"
+
+# Then stop each one individually
+docker stop container1
+docker stop container2
+
+
+docker exec -it <container-name-or-id> sh
+
+# Tag your image
+docker tag hospital-mgmt vivek17290/repo
+
+# Push to DockerHub
+docker push vivek17290/repo
+
+
