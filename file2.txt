@@ -33,3 +33,11 @@ git push origin --delete patient
 
 # Show details of the last commit (diff, metadata, etc.)
 git show
+
+
+
+#generate ssh key 
+ssh-keygen -t ed25519 -C "your.email@example.com"
+
+$shift origin 
+git remote set-url origin git@github.com:your-username/your-repo-name.git

@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>SE</groupId>
   <artifactId>Food-System</artifactId>
-  <packaging>jar</packaging>
+  <packaging>war</packaging>
   <version>0.0.1-SNAPSHOT</version>
   <name>FoodSystem Maven Webapp</name>
   <url>http://maven.apache.org</url>
@@ -20,24 +20,32 @@
       <version>8.0.30</version>
     </dependency>
     <dependency>
-    	<groupId>javax.servlet</groupId>
-    	<artifactId>javax.servlet-api</artifactId>
-    	<version>3.1.0</version>
-    	<scope>provided</scope>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+      <version>3.1.0</version>
+      <scope>provided</scope>
+    </dependency>
+    <!-- jQuery WebJar dependency -->
+    <dependency>
+      <groupId>org.webjars</groupId>
+      <artifactId>jquery</artifactId>
+      <version>3.6.0</version>
     </dependency>
   </dependencies>
   <build>
-  	<finalName>Food-System-xyz</finalName>
+    <finalName>Food-System-xyz</finalName>
     <plugins>
-    	<plugin>
-    		<groupId>org.apache.tomcat.maven</groupId>
-    		<artifactId>tomcat7-maven-plugin</artifactId>
-    		<version>2.2</version>
-    		<configuration>
-    			<port>9091</port>
-    			<uriEncoding>UTF-8</uriEncoding>
-    		</configuration>
-    	</plugin>
+      <plugin>
+        <groupId>org.apache.tomcat.maven</groupId>
+        <artifactId>tomcat7-maven-plugin</artifactId>
+        <version>2.2</version>
+        <configuration>
+          <warSourceDirectory>WebContent</warSourceDirectory>
+          <outputDirectory>build_output</outputDirectory>
+          <port>9091</port>
+          <uriEncoding>UTF-8</uriEncoding>
+        </configuration>
+      </plugin>
     </plugins>
   </build>
 </project>

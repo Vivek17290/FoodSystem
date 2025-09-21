@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  app:
+    image: yourdockerhubusername/campus-mgmt-system:v1.0
+    container_name: campus-app
+    ports:
+      - "7079:8080"
+      - "7007:8080"
+    environment:
+      - SPRING_DATA_MONGODB_URI=mongodb://mongo:27017/campusdb
+      - SPRING_DATA_MONGODB_DATABASE=campusdb
+    depends_on:
+      - mongo
+    restart: unless-stopped
+
+  mongo:
+    image: mongo:6.0
+    container_name: campus-mongo
+    environment:
+      MONGO_INITDB_DATABASE: campusdb
+    volumes:
+      - mongo_data:/data/db
+    restart: unless-stopped
+
+volumes:
+  mongo_data:

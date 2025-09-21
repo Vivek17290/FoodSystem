@@ -72,4 +72,5 @@ docker tag hospital-mgmt vivek17290/repo
 # Push to DockerHub
 docker push vivek17290/repo
 
+docker compose-up -d
 
