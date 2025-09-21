@@ -74,3 +74,12 @@ docker push vivek17290/repo
 
 docker compose-up -d
 
+
+
+
+#Open a shell inside a running container:
+docker exec -it <container-name-or-id> /bin/bash
+
+
+#List removed containers:
+docker ps -a --filter "status=exited"
